@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cursos</h1>
+    <select name="cursos">
+        <option value="test">A VER</option>
+        <option value="some value">ESTO ESTA BUENO</option>
+    </select>
+    <h2 name="value">Valor de lo seleccionado</h2>
+    <script>
+        const cursosBox = document.getElementsByName("cursos")[0];
+        var tag =  document.getElementsByName("value")[0];
+        var cursos = ['AAA','BBBB','CCCCC'];
+        for (var i=0;i<cursos.length;i++){
+            var element=document.createElement("option");
+            element.textContent=cursos[i].toLowerCase();
+            element.value = cursos[i].length;
+            cursosBox.appendChild(element);
+        }
+        cursosBox.addEventListener("change",function(){
+            console.log(cursosBox.value);
+            tag.innerHTML = cursosBox.value;
+        })
+    </script>
+</body>
+</html>
